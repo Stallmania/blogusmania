@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class='container'>
+        <h1>Création un article</h1>
+
+        {{ form_start(formArticle)}}
+
+        {{ form_row(formArticle.category) }}
+        {{ form_row(formArticle.title,{'attr':{'placeholder':'(ex:planet..)'}}) }}
+        {{ form_row(formArticle.content,{'attr':{'placeholder':'contenu'}}) }}
+        {{ form_row(formArticle.image,{'attr':{'placeholder':'image'}}) }}
+
+        <button type="submit" class="btn btn-success">
+            {% if editMode %}
+                Enregister les modifications
+            {% else %}
+                Ajouter l'article
+            {% endif %}
+        </button> 
+
+        {{ form_end(formArticle)}}
+    </div>
+
+{% endblock %}
